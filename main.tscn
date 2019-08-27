@@ -6,13 +6,13 @@
 [ext_resource path="res://scripts/Player.gd" type="Script" id=4]
 
 [sub_resource type="QuadMesh" id=3]
-size = Vector2( 250, 500 )
+size = Vector2( 250, 1000 )
 
 [node name="Scene" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="Ground Mesh" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -40, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -40, -400 )
 mesh = SubResource( 3 )
 material/0 = ExtResource( 2 )
 
@@ -21,3 +21,4 @@ script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 12 )
+far = 200.0
