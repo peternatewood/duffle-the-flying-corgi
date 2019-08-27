@@ -1,6 +1,7 @@
 extends Area
 
 onready var camera: Camera = get_viewport().get_camera()
+onready var scene_controller = get_node("/root/Scene")
 
 var input_velocity: Vector2
 var velocity: Vector3
@@ -19,7 +20,8 @@ func _process(delta):
 
 	global_translate(velocity)
 
-	# TODO: Handle boundary collisions
+	# Handle boundary collisions
+	transform.origin = scene_controller.handle_boundary_collision(transform.origin)
 
 	# Update camera
 	camera.transform.origin = Vector3(CAM_OFFSET_PERCENT * transform.origin.x, CAM_OFFSET_PERCENT * transform.origin.y, transform.origin.z) + CAM_OFFSET
